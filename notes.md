@@ -5,10 +5,12 @@
 * Window activate venv
     * .venv\Scripts\activate
 * FastAPI
-    * pip install "fastapi[standard]"
-    * uvicorn main:app --reload
-    * uvicorn main:app --host 0.0.0.0 --port 8006
-    * uvicorn main:app --port 5000
+    ```
+    pip install "fastapi[standard]"
+    # uvicorn main:app --reload
+    # uvicorn main:app --host 0.0.0.0 --port 8006
+    uvicorn main:app --port 5000
+    ```
 
 * Git Setup
 
@@ -22,6 +24,11 @@
     git push -u origin main
     ```
 
+* Other useful git commands
+    ```
+    git reset --soft Head~1
+    git status *
+    ```
 
 
 
