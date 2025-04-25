@@ -9,7 +9,8 @@
     pip install "fastapi[standard]"
     # uvicorn main:app --reload
     # uvicorn main:app --host 0.0.0.0 --port 8006
-    uvicorn main:app --port 5000
+    # uvicorn main:app --port 5000 #before moving main to app folder
+    uvicorn app.main:app --port 5000 #after moving main to app folder
     ```
 
 * Git Setup
@@ -29,8 +30,17 @@
     git reset --soft Head~1
     git status *
     ```
-
-
+* Install
+    ```
+    pip install pytest
+    pytest
+    ```
+* Requirements
+    ```
+    pip freeze
+    pip freeze > requirments.txt
+    pip install -r requirements.txt
+    ```
 
 ## Useful references
 * [Manual FastAIP](https://fastapi.tiangolo.com/deployment/manually/#server-machine-and-server-program)
