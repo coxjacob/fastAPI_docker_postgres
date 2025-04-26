@@ -34,12 +34,23 @@
     ```
     pip install pytest
     pytest
+
+    pytest -c app/tests/pytest.ini
     ```
 * Requirements
     ```
     pip freeze
     pip freeze > requirments.txt
     pip install -r requirements.txt
+    ```
+
+* Add Table
+    ```
+    CREATE TABLE IF NOT EXISTS Students (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL
+    );
     ```
 
 ## Useful references

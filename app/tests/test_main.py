@@ -16,3 +16,14 @@ def test_when_app_running_status_endpoint_should_return_OK(client):
     assert response.status_code == 200
     data = response.json()
     assert data["message"] == "OK"
+
+def test_when_given_user_name_should_create_a_student_in_db(client):
+    rand_value = randint(0, 100000)
+    first_name = f"John {rand_value}"
+    last_name = f"World {rand_value}"
+    create_response = client.post("/student/", json={
+                                  "first_name": first_name,
+                                  "last_name":last_name})
+    assert create_response.status_code == 200
+    student_id = create_response.json()['id']
+    assert student_id != None
