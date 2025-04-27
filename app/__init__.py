@@ -1,1 +1,0 @@
-#__init__.py somehow allows tests to link with main

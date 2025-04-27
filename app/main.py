@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from app.db import get_db_connection
 from app.student import Student, StudentCreate
 
-app = FastAPI()
+app = FastAPI(title="University API")
 
 
 @app.get("/")

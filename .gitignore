@@ -1,2 +1,11 @@
 __pycache__/*
+.pytest_cache/*
 .venv
+*.pyc
+app/__pycache__/*
+app/tests/__pycache__/*
+app/tests/__pycache__/test_main.cpython-311-pytest-8.3.5.pyc
+app/__pycache__/__init__.cpython-311.pyc
+app/__pycache__/config.cpython-311.pyc
+app/__pycache__/db.cpython-311.pyc
+app/__pycache__/main.cpython-311.pyc
