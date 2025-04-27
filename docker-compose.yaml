@@ -1,6 +1,20 @@
-version: '3.8'
-
 services:
+  web:
+    build: .  #Calls Dockerfile to build
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; uvicorn app.main:app --host 0.0.0.0 --port 8080 --port 8080' 
+    #    while !</dev/tcp/db/5432; do sleep 1 will continue until Postgres is up. Once up, uvicorn app.main:app --host 0.0.0.0 runs.
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_NAME=university_api_db
+      - DATABASE_USER=university_api_user
+      - DATABASE_PASSWORD=university_api_password
+      - DATABASE_PORT=5432
+    depends_on:
+      - db
   db:
     image: postgres:15-alpine
     volumes:
