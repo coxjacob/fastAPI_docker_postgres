@@ -15,6 +15,13 @@ services:
       - DATABASE_PORT=5432
     depends_on:
       - db
+    develop:
+      watch:  #reset container when change is made
+        - action: sync
+          path: ./app
+          target: /app
+        - action: rebuild
+          path: ./requirements.txt
   db:
     image: postgres:15-alpine
     volumes:
