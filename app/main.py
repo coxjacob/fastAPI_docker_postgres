@@ -65,11 +65,11 @@ def get_all_students():
     raise HTTPException(status_code=400, detail="Student not found")
 
 
-@app.delete("student/{student_id}")
+@app.delete("/student/{student_id}")
 def delete_student(student_id: int):
     conn, cursor = get_db_connection()
     try:
-        cursor.execute(f"DELETE FROM Students WHERE id = {student_id}")
+        cursor.execute("DELETE FROM Students WHERE id = %s", (student_id,))
         conn.commit()
         cursor.close()
     except Exception as e:

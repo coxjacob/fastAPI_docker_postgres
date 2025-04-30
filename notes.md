@@ -58,6 +58,11 @@
     docker compose up
     ```
 
+* StreamLit
+    ```
+    streamlit run main.py
+    ```
+    
 ## Useful references
 * [Manual FastAIP](https://fastapi.tiangolo.com/deployment/manually/#server-machine-and-server-program)
 * [Validation errors](https://docs.pydantic.dev/2.11/errors/validation_errors/#missing)
